@@ -1,0 +1,30 @@
+<div ng-controller="CategoryListController">
+    <h2>Category List</h2>
+    <label for="search">Search:</label>
+  <input type="text" id="search" ng-model="searchQuery" ng-change="getCategories()">
+  
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="category in categories">
+                <td>{{ category.name }}</td>
+                <td>
+                    <!-- <a ng-href="#/product-detail/{{ product.id }}">{{ product.name }}</a>
+                    <a ng-href="#/category/edit/{{ product.id }}">ed</a> -->
+                    <button ng-click="editCategory(category.id)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button ng-disabled="currentPage === 1" ng-click="changePage(currentPage - 1)">Previous</button>
+        <button ng-disabled="currentPage === totalPages" ng-click="changePage(currentPage + 1)">Next</button>
+      </div>
+
+    <button ng-click="goToCreatePage()">Create New Category</button>
+</div>

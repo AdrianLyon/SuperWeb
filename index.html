@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app/views/product/product.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <title>AngularJS CRUD Example</title>
+    <ng-view></ng-view>
+    <!-- Include AngularJS and ngRoute -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <!-- Include your app.js and other scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/category/CategoryFormController.js"></script>
+    <script src="app/controllers/category/CategoryListController.js"></script>
+    <script src="app/controllers/product/productFormController.js"></script>
+    <script src="app/controllers/product/productController.js"></script>
+    <script src="app/services/categoryService.js"></script>
+    <script src="app/services/productService.js"></script>
+</body>
+</html>

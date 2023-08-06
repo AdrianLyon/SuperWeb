@@ -1,0 +1,39 @@
+<div ng-controller="productListController">
+    <h2>Product List</h2>
+    <label for="search">Search:</label>
+  <input type="text" id="search" ng-model="searchQuery" ng-change="getProducts()">
+  
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>partial</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price| currency}}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.pricePartial | currency}}</td>
+                    <td>
+                        <!-- <a ng-href="#/product-detail/{{ product.id }}">{{ product.name }}</a>
+                        a ng-href="#/product/edit/{{ product.id }}">ed</a> -->
+                        <button class="btn btn-primary" ng-click="editProduct(product.id)">Edit</button>
+                        <button class="btn btn-danger" ng-click="deleteProduct(product.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button ng-disabled="currentPage === 1" ng-click="changePage(currentPage - 1)">Previous</button>
+        <button ng-disabled="currentPage === totalPages" ng-click="changePage(currentPage + 1)">Next</button>
+      </div>
+      {{ totalPay() | currency}}
+    <button class="glow-on-hover" ng-click="goToCreatePage()">Create New Product</button>
+</div>
